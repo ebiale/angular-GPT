@@ -1,11 +1,17 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
 import {
   ChatMessageComponent,
   MyMessageComponent,
   TextMessageBoxComponent,
   TypingLoaderComponent
 } from '@components/index';
-import {TextMessageEvent} from "@interfaces/text-message-event";
+import {
+  Message,
+  TextBoxMessageOption,
+  TextMessageEvent
+} from "@interfaces/index";
+import {OpenAIService} from "../../services/open-ai.service";
+
 
 @Component({
   selector: 'app-orthography-page',
@@ -22,8 +28,6 @@ import {TextMessageEvent} from "@interfaces/text-message-event";
 })
 export default class OrthographyPageComponent {
 
-  handleMessage({prompt, file}: TextMessageEvent) {
 
-  }
 
 }

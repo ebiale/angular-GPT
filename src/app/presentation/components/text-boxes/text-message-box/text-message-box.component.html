@@ -13,13 +13,21 @@
            hidden >
   </div>
   <div class="flex-grow">
-    <div class="relative w-full">
+    <div class="flex">
       <input type="text" autofocus
              class="flex w-full border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10"
              formControlName="prompt"
              [autocomplete]="disableCorrections ? 'on':'off'"
              [spellcheck]="disableCorrections ? 'on':'off'"
              [placeholder]="placeholder">
+      <select *ngIf="allowSelection"
+              formControlName="selectedOption"
+        class="w-2/5 ml-5 border rounded-xl text-gray-800 focus:outline-none focus:border-indigo-300 pl-4 h-10">
+        <option value="">Select</option>
+        @for (option of options; track option.id) {
+          <option [value]="option.id">{{option.text}}</option>
+        }
+      </select>
     </div>
   </div>
 
